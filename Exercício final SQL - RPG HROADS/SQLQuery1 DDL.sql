@@ -30,10 +30,7 @@ CREATE TABLE Classes(
 
 );
 
-CREATE TABLE ClassesHabilidades(
-	IdClasse		  INT FOREIGN KEY REFERENCES Classes(IdClasse),
-	IdHabilidade      INT FOREIGN KEY REFERENCES Habilidades(IdHabilidade)
-);
+
 
 CREATE TABLE Personagem(
 	
