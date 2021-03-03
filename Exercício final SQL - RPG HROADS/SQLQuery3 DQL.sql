@@ -53,9 +53,11 @@ full outer join Habilidades
 on ClassesHabilidades.IdHabilidade= Habilidades.IdHabilidade;
 
 -- Exercício 17
-SELECT Classes.NomeClasse , Habilidades.Nome FROM Classes
-LEFT JOIN Habilidades
-ON Classes.IdClasse = Habilidades.IdHabilidade;
+select Classes.NomeClasse, Habilidades.Nome from Habilidades
+inner join ClassesHabilidades
+on Habilidades.IdHabilidade = ClassesHabilidades.IdHabilidade
+inner join Classes
+on ClassesHabilidades.IdClasse = Classes.IdClasse
 
 -- Exercício 18 
 select Classes.NomeClasse, Habilidades.Nome from Habilidades
