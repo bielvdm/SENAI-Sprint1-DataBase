@@ -13,7 +13,7 @@ VALUES ('1140028922',2)
       ,('11972224111', 1)
 
 INSERT INTO Email (Email, IdPessoa)
-VALUES  ('gabrielvdm@gmail.com', 1)
+VALUES  ('gabrielvdm@gmail.com', 0)
        ,('lethu@icloud.com', 2)
 
 DELETE FROM Telefones

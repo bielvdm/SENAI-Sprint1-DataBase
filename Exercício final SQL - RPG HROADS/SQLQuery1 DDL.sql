@@ -1,13 +1,18 @@
-CREATE DATABASE HROADS;
+--DDL
 
-USE HROADS;
+--Exercício 1
+CREATE DATABASE SENAI_HROADS_TARDE;
 
+USE SENAI_HROADS_TARDE;
+
+--Exercício 2
 CREATE TABLE TipoDeHabilidade(
 
 	IdTipoDeHabilidade	INT PRIMARY KEY IDENTITY,
 	NomeTipo			VARCHAR(100) NOT NULL,
 
 );
+
 CREATE TABLE Habilidades(
 
 	IdHabilidade		INT PRIMARY KEY IDENTITY,
@@ -24,6 +29,12 @@ CREATE TABLE Classes(
 	NomeClasse			VARCHAR(100) NOT NULL,
 
 );
+
+CREATE TABLE ClassesHabilidades(
+	IdClasse		  INT FOREIGN KEY REFERENCES Classes(IdClasse),
+	IdHabilidade      INT FOREIGN KEY REFERENCES Habilidades(IdHabilidade)
+);
+
 CREATE TABLE Personagem(
 	
 	IdPersonagem		INT PRIMARY KEY IDENTITY,
