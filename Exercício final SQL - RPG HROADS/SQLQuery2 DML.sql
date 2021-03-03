@@ -1,6 +1,9 @@
 --DML
 
+
 USE SENAI_HROADS_TARDE;
+
+-- Exercício 3
 
 INSERT INTO TipoDeHabilidade 
 VALUES			('Ataque'),
@@ -29,9 +32,10 @@ VALUES                        (1       , 1           ),
 							  (3       , 1           ),
 							  (4       , 3           ),
 							  (4       , 2           ),
-							  (1       , NULL        ),
-							  (1       , 3           ),
+							  (5       , NULL        ),
+							  (6       , 3           ),
 							  (7       , NULL        )
+
 
 
 INSERT INTO Personagem (IdClasse, NomePersonagem, CapacidadeVida, CapacidadeMana, DataCriacao, DataAtualização)

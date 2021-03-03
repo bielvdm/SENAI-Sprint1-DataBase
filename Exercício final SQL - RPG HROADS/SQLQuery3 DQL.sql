@@ -2,39 +2,63 @@
 
 use SENAI_HROADS_TARDE
 
-select * from TipoDeHabilidade
-select * from Classes
-select * from ClassesHabilidades
+-- Exercício 5
+UPDATE Classes
+SET NomeClasse = 'Necromancer'
+WHERE IdClasse = 5;
 
---Tarefa 6
+-- Exercício 6
 select * from Personagem
 
---Tarefa 7
-select * from TipoDeHabilidade
+-- Exercício 7
+SELECT * FROM Classes;
 
---Tarefa 8
+-- Exercício 8
 select (NomeClasse) from Classes
 
---Tarefa 10
-select count(Nome) from Habilidades; 
+-- Exercício 9
+SELECT * FROM Habilidades;
 
---Tarefa 12 
+-- Exercício 10
+select count(Nome) from Habilidades;
+
+-- Exercício 11
+SELECT IdHabilidade FROM Habilidades;
+
+-- Exercício 12
 select * from Habilidades
 
---Tarefa 14
+-- Exercício 13
+SELECT Habilidades.Nome , TipoDeHabilidade.NomeTipo FROM Habilidades
+LEFT JOIN TipoDeHabilidade
+ON Habilidades.IdHabilidade = TipoDeHabilidade.IdTipoDeHabilidade;
+
+-- Exercício 14
 select Personagem.NomePersonagem, Classes.NomeClasse from Personagem
 left join Classes
 on Classes.IdClasse = Personagem.IdPersonagem
 
---Tarefa 16 
+-- Exercício 15
+SELECT Personagem.NomePersonagem , Classes.NomeClasse ,
+Personagem.CapacidadeVida , Personagem.CapacidadeMana 
+FROM Personagem
+INNER JOIN Classes
+ON Personagem.IdPersonagem = Classes.IdClasse;
+
+-- Exercício 16 
 select Classes.NomeClasse, Habilidades.Nome from Classes 
-inner join ClassesHabilidades
+full outer join ClassesHabilidades
 on Classes.IdClasse= ClassesHabilidades.IdClasse
-inner join Habilidades
+full outer join Habilidades
 on ClassesHabilidades.IdHabilidade= Habilidades.IdHabilidade;
 
---Tarefa 18 
-select Habilidades.Nome, Classes.NomeClasse from Habilidades
+-- Exercício 17
+SELECT Classes.NomeClasse , Habilidades.Nome FROM Classes
+LEFT JOIN Habilidades
+ON Classes.IdClasse = Habilidades.IdHabilidade;
+
+-- Exercício 18 
+select Classes.NomeClasse, Habilidades.Nome from Habilidades
 left join ClassesHabilidades
 on Habilidades.IdHabilidade = ClassesHabilidades.IdHabilidade
 full outer join Classes
